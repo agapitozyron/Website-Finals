@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery — Santi Blinds</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Quicksand:wght@300;400;500;600&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav scrolled" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <span class="nav__logo-mark">
+          <span class="logo-s">S</span><span class="logo-slats"></span>
+        </span>
+        <span class="nav__brand">SANTI <em>BLINDS</em></span>
+      </a>
+      <nav class="nav__links" id="navLinks">
+        <a href="about.html">About</a>
+        <a href="products.html">Products</a>
+        <a href="gallery.html" class="active">Gallery</a>
+        <a href="process.html">Process</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero page-hero--gallery">
+    <div class="page-hero__bg"></div>
+    <div class="container">
+      <div class="page-hero__content">
+        <span class="section-label reveal">Portfolio</span>
+        <h1 class="page-hero__title reveal">Light,<br/><span class="accent">Controlled</span></h1>
+        <p class="page-hero__sub reveal">Browse real installations — spaces transformed by the precision craft of Santi Blinds.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY FILTER -->
+  <section class="gallery-page section">
+    <div class="container">
+      <div class="filter-bar reveal">
+        <button class="filter-btn active" data-filter="all">All Rooms</button>
+        <button class="filter-btn" data-filter="living">Living Room</button>
+        <button class="filter-btn" data-filter="bedroom">Bedroom</button>
+        <button class="filter-btn" data-filter="office">Office</button>
+        <button class="filter-btn" data-filter="dining">Dining</button>
+      </div>
+
+      <!-- MASONRY GALLERY GRID -->
+      <div class="gallery-grid" id="galleryGrid">
+
+        <div class="gallery-grid__item gallery-grid__item--tall reveal" data-delay="0" data-room="living">
+          <div class="gallery-grid__fill gf--1"></div>
+          <div class="gallery-grid__overlay">
+            <span class="gallery-grid__label">Living Room</span>
+            <span class="gallery-grid__product">Venetian Blinds · Wood Slat</span>
+          </div>
+        </div>
+
+        <div class="gallery-grid__item reveal" data-delay="80" data-room="bedroom">
+          <div class="gallery-grid__fill gf--2"></div>
+          <div class="gallery-grid__overlay">
+            <span class="gallery-grid__label">Bedroom</span>
+            <span class="gallery-grid__product">Roller Blinds · Blackout</span>
+          </div>
+        </div>
+
+        <div class="gallery-grid__item reveal" data-delay="160" data-room="office">
+          <div class="gallery-grid__fill gf--3"></div>
+          <div class="gallery-grid__overlay">
+            <span class="gallery-grid__label">Home Office</span>
+            <span class="gallery-grid__product">Motorized · Smart Control</span>
+          </div>
+        </div>
+
+        <div class="gallery-grid__item gallery-grid__item--wide reveal" data-delay="240" data-room="living">
+          <div class="gallery-grid__fill gf--4"></div>
+          <div class="gallery-grid__overlay">
+            <span class="gallery-grid__label">Living Room</span>
+            <span class="gallery-grid__product">Cellular · Light Filter</span>
+          </div>
+        </div>
+
+        <div class="gallery-grid__item reveal" data-delay="320" data-room="dining">
+          <div class="gallery-grid__fill gf--5"></div>
+          <div class="gallery-grid__overlay">
+            <span class="gallery-grid__label">Dining Area</span>
+            <span class="gallery-grid__product">Venetian · Aluminium</span>
+          </div>
+        </div>
+
+        <div class="gallery-grid__item gallery-grid__item--tall reveal" data-delay="400" data-room="bedroom">
+          <div class="gallery-grid__fill gf--6"></div>
+          <div class="gallery-grid__overlay">
+            <span class="gallery-grid__label">Master Bedroom</span>
+            <span class="gallery-grid__product">Roman Blinds · Linen Sheer</span>
+          </div>
+        </div>
+
+        <div class="gallery-grid__item reveal" data-delay="480" data-room="office">
+          <div class="gallery-grid__fill gf--7"></div>
+          <div class="gallery-grid__overlay">
+            <span class="gallery-grid__label">Office</span>
+            <span class="gallery-grid__product">Vertical Blinds · Fabric</span>
+          </div>
+        </div>
+
+        <div class="gallery-grid__item reveal" data-delay="560" data-room="living">
+          <div class="gallery-grid__fill gf--8"></div>
+          <div class="gallery-grid__overlay">
+            <span class="gallery-grid__label">Living Room</span>
+            <span class="gallery-grid__product">Roman Blinds · Cotton</span>
+          </div>
+        </div>
+
+        <div class="gallery-grid__item gallery-grid__item--wide reveal" data-delay="640" data-room="dining">
+          <div class="gallery-grid__fill gf--9"></div>
+          <div class="gallery-grid__overlay">
+            <span class="gallery-grid__label">Dining & Kitchen</span>
+            <span class="gallery-grid__product">Roller Blinds · Sheer</span>
+          </div>
+        </div>
+
+        <div class="gallery-grid__item reveal" data-delay="720" data-room="bedroom">
+          <div class="gallery-grid__fill gf--2"></div>
+          <div class="gallery-grid__overlay">
+            <span class="gallery-grid__label">Guest Room</span>
+            <span class="gallery-grid__product">Cellular · Blackout</span>
+          </div>
+        </div>
+
+        <div class="gallery-grid__item gallery-grid__item--tall reveal" data-delay="800" data-room="office">
+          <div class="gallery-grid__fill gf--3"></div>
+          <div class="gallery-grid__overlay">
+            <span class="gallery-grid__label">Executive Office</span>
+            <span class="gallery-grid__product">Motorized · Roller</span>
+          </div>
+        </div>
+
+        <div class="gallery-grid__item reveal" data-delay="880" data-room="living">
+          <div class="gallery-grid__fill gf--5"></div>
+          <div class="gallery-grid__overlay">
+            <span class="gallery-grid__label">Living Room</span>
+            <span class="gallery-grid__product">Venetian · Wood Slat 50mm</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY STATS -->
+  <div class="gallery-stats">
+    <div class="container">
+      <div class="gallery-stats__grid">
+        <div class="gallery-stats__item reveal">
+          <span class="gallery-stats__num">2,000<span style="color:var(--c-tan);font-size:0.55em">+</span></span>
+          <span class="gallery-stats__label">Spaces Transformed</span>
+        </div>
+        <div class="gallery-stats__item reveal" data-delay="100">
+          <span class="gallery-stats__num">50<span style="color:var(--c-tan);font-size:0.55em">+</span></span>
+          <span class="gallery-stats__label">Design Options</span>
+        </div>
+        <div class="gallery-stats__item reveal" data-delay="200">
+          <span class="gallery-stats__num">98<span style="color:var(--c-tan);font-size:0.55em">%</span></span>
+          <span class="gallery-stats__label">Client Satisfaction</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox__backdrop" id="lightboxBackdrop"></div>
+    <div class="lightbox__content">
+      <div class="lightbox__img" id="lightboxImg"></div>
+      <div class="lightbox__info" id="lightboxInfo"></div>
+      <button class="lightbox__close" id="lightboxClose" aria-label="Close">✕</button>
+      <button class="lightbox__prev" id="lightboxPrev" aria-label="Previous">←</button>
+      <button class="lightbox__next" id="lightboxNext" aria-label="Next">→</button>
+    </div>
+  </div>
+
+  <!-- CTA STRIP -->
+  <section class="cta-strip">
+    <div class="container">
+      <div class="cta-strip__inner reveal">
+        <div class="cta-strip__text">
+          <h2>Love what you see?</h2>
+          <p>Let's bring the same transformation to your space.</p>
+        </div>
+        <a href="contact.html" class="btn btn--primary">Get Started</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <span class="footer__logo">SANTI <em>BLINDS</em></span>
+          <p>Window coverings designed for light, made for life.</p>
+        </div>
+        <div class="footer__nav">
+          <div>
+            <h4>Company</h4>
+            <a href="about.html">About</a>
+            <a href="process.html">Process</a>
+            <a href="gallery.html">Gallery</a>
+          </div>
+          <div>
+            <h4>Products</h4>
+            <a href="products.html">Roller Blinds</a>
+            <a href="products.html">Venetian Blinds</a>
+            <a href="products.html">Roman Blinds</a>
+            <a href="products.html">Motorized</a>
+          </div>
+          <div>
+            <h4>Contact</h4>
+            <a href="contact.html">Get a Quote</a>
+            <a href="mailto:info@santiblinds.com">Email Us</a>
+            <a href="tel:+6328888000">Call Us</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 Santi Blinds. All rights reserved.</p>
+        <p>Modern · Minimal · Refined · Timeless</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="javascript/script.js"></script>
+</body>
+</html>
