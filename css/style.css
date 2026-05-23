@@ -275,6 +275,8 @@ ul { list-style: none; }
   flex-direction: column;
   gap: 5px;
   padding: 8px;
+  position: relative;
+  z-index: 1001;
 }
 .nav__hamburger span {
   display: block;
@@ -371,6 +373,9 @@ ul { list-style: none; }
   align-items: center;
   gap: 0.75rem;
   z-index: 2;
+}
+@media (max-width: 480px) {
+  .hero__scroll-hint { display: none; }
 }
 .hero__scroll-hint span {
   font-family: var(--font-ui);
@@ -1509,6 +1514,20 @@ ul { list-style: none; }
   .teasers__grid { grid-template-columns: repeat(2, 1fr); }
   .values__grid { grid-template-columns: repeat(2, 1fr); }
   .team__grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Contact page */
+  .contact__grid--page { grid-template-columns: 1fr; gap: 50px; }
+  .contact-page::before { display: none; }
+  .faq__grid { grid-template-columns: 1fr; gap: 40px; }
+
+  /* Map section */
+  .map-placeholder { height: auto; }
+  .map-placeholder__inner { flex-direction: column; position: relative; }
+  .map__slat-visual { height: 240px; flex: none; }
+  .map-placeholder__label { width: 100%; border-left: none; border-top: 1px solid rgba(255,255,255,0.06); padding: 2.5rem; }
+
+  /* About hero */
+  .page-hero--about .page-hero__content { max-width: 100%; }
 }
 
 /* ============================================
@@ -1521,8 +1540,10 @@ ul { list-style: none; }
     position: fixed;
     top: var(--nav-h);
     left: 0; right: 0;
-    background: rgba(34,32,33,0.97);
-    backdrop-filter: blur(12px);
+    z-index: 999;
+    background: rgba(34,32,33,0.98);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     flex-direction: column;
     align-items: center;
     gap: 0;
@@ -1537,12 +1558,21 @@ ul { list-style: none; }
     padding: 1.5rem 0 2rem;
   }
   .nav__links a {
-    padding: 0.75rem 2rem;
+    padding: 0.9rem 2rem;
     width: 100%;
     text-align: center;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.14em;
   }
   .nav__hamburger { display: flex; }
+
+  /* Always show nav background on mobile so hamburger is always visible */
+  .nav {
+    background: rgba(34, 32, 33, 0.97);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.06);
+  }
 
   .hero__title { font-size: clamp(3rem, 12vw, 5rem); }
   .hero__cta { flex-direction: column; width: 100%; max-width: 260px; }
@@ -1555,7 +1585,6 @@ ul { list-style: none; }
     height: auto;
     flex-direction: column;
     gap: 4px;
-    padding: 0 clamp(20px, 5vw, 40px);
   }
   .gallery__item { flex: none; height: 200px; }
   .gallery__item--tall,
@@ -1580,6 +1609,45 @@ ul { list-style: none; }
   .teasers__grid { grid-template-columns: 1fr; }
   .why__grid { grid-template-columns: repeat(2, 1fr); }
   .cta-strip__inner { flex-direction: column; }
+
+  /* Page hero */
+  .page-hero { min-height: 55vh; }
+  .page-hero--about { min-height: 60vh; }
+  .page-hero--about .page-hero__content { max-width: 100%; }
+  .page-hero__slat-art { display: none; }
+
+  /* Stats strip */
+  .stats-strip__grid { grid-template-columns: repeat(2, 1fr); }
+  .stats-strip__item { border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .stats-strip__item:nth-child(2) { border-right: none; }
+  .stats-strip__item:nth-child(3) { border-bottom: none; }
+  .stats-strip__item:nth-child(4) { border-right: none; border-bottom: none; }
+
+  /* Lightbox — arrows stay within screen */
+  .lightbox__prev { left: 0.5rem; }
+  .lightbox__next { right: 0.5rem; }
+
+  /* Commitment strip */
+  .commitment-strip__grid { grid-template-columns: 1fr; gap: 1.5px; }
+
+  /* Gallery stats */
+  .gallery-stats__grid { grid-template-columns: 1fr; }
+  .gallery-stats__item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .gallery-stats__item:last-child { border-bottom: none; }
+
+  /* Timeline */
+  .timeline { grid-template-columns: 1fr; }
+  .timeline::before { display: none; }
+  .timeline__item { padding: 0 0 2.5rem 2rem; border-left: 1px solid rgba(162,160,146,0.15); }
+  .timeline__item:first-child { padding-left: 2rem; }
+  .timeline__marker { margin-left: -2rem; margin-bottom: 1.2rem; }
+
+  /* FAQ grid */
+  .faq-grid-wrap { grid-template-columns: 1fr; }
+  .faq__grid { grid-template-columns: 1fr; gap: 40px; }
+
+  /* Form */
+  .form-row { grid-template-columns: 1fr; }
 }
 
 /* ============================================
@@ -1587,13 +1655,44 @@ ul { list-style: none; }
    ============================================ */
 @media (max-width: 480px) {
   .hero__content { padding-top: 30px; }
+  .hero__scroll-hint { display: none; }
   .section-title { font-size: clamp(1.8rem, 8vw, 2.5rem); }
   .testimonial blockquote { font-size: 0.95rem; }
   .gallery-grid { columns: 1; }
   .gallery-grid__fill { height: 220px !important; }
   .gallery-grid__item--tall .gallery-grid__fill { height: 260px !important; }
-  .lightbox__prev { left: 0.5rem; }
-  .lightbox__next { right: 0.5rem; }
+
+  /* Lightbox full-screen on tiny phones */
+  .lightbox__content { width: 100vw; }
+  .lightbox__img { height: 55vh; }
+  .lightbox__close { top: -2.75rem; }
+  .lightbox__prev { left: 0.25rem; }
+  .lightbox__next { right: 0.25rem; }
+
+  /* Why grid to single column on very small screens */
+  .why__grid { grid-template-columns: 1fr; }
+
+  /* Buttons full-width on small phones */
+  .hero__cta { max-width: 100%; }
+  .hero__cta .btn { width: 100%; }
+
+  /* Prevent overflow from large numbers */
+  .stats-strip__num { font-size: clamp(2rem, 8vw, 3rem); }
+  .gallery-stats__num { font-size: clamp(2.5rem, 8vw, 4rem); }
+  .commitment-card__num { font-size: clamp(2rem, 8vw, 3rem); }
+  .stat__num { font-size: clamp(1.8rem, 6vw, 2.5rem); }
+
+  /* Contact form full-width */
+  .map-placeholder__label { padding: 1.75rem; }
+
+  /* Process full-width numbers */
+  .process-step-full { grid-template-columns: 1fr; }
+  .process-step-full__num { font-size: 2rem; }
+  .process-step-full__num::after { display: none; }
+
+  /* Section header spacing */
+  .section-header { margin-bottom: 2.5rem; }
+  .section-desc { margin-bottom: 2rem; }
 }
 
 /* ============================================
@@ -2601,7 +2700,7 @@ ul { list-style: none; }
 }
 
 /* ============================================
-   RESPONSIVE — CONTACT & INNER PAGES
+   RESPONSIVE — CONTACT & INNER PAGES (≤1100px)
    ============================================ */
 @media (max-width: 1100px) {
   .why__grid { grid-template-columns: repeat(2, 1fr); }
@@ -2622,28 +2721,20 @@ ul { list-style: none; }
   .faq-grid-wrap { grid-template-columns: 1fr; }
   .commitment-strip__grid { grid-template-columns: 1fr; gap: 1.5px; }
 }
-@media (max-width: 1024px) {
-  .contact__grid--page { grid-template-columns: 1fr; gap: 50px; }
-  .contact-page::before { display: none; }
-  .faq__grid { grid-template-columns: 1fr; gap: 40px; }
-  .map-placeholder { height: auto; }
-  .map-placeholder__inner { flex-direction: column; position: relative; }
-  .map__slat-visual { height: 240px; flex: none; }
-  .map-placeholder__label { width: 100%; border-left: none; border-top: 1px solid rgba(255,255,255,0.06); padding: 2.5rem; }
-  .page-hero--about .page-hero__content { max-width: 100%; }
-}
-@media (max-width: 768px) {
-  .why__grid { grid-template-columns: 1fr; gap: 1.5px; }
-  .stats-strip__grid { grid-template-columns: repeat(2, 1fr); }
-  .ctestimonial-grid { grid-template-columns: 1fr; }
-  .form-row { grid-template-columns: 1fr; }
-}
+
+/* ============================================
+   RESPONSIVE — CONTACT & INNER PAGES (≤640px supplement)
+   ============================================ */
 @media (max-width: 640px) {
   .process-step-full { grid-template-columns: 1fr; }
   .process-step-full__num { font-size: 2rem; }
   .process-step-full__num::after { display: none; }
   .timeline { grid-template-columns: 1fr; }
   .page-hero__title { font-size: clamp(2.4rem, 10vw, 4rem); }
+  .map-placeholder__label { padding: 1.75rem 1.5rem; }
+  .ctestimonial-grid { grid-template-columns: 1fr; }
+  .why__grid { grid-template-columns: 1fr; }
+  .stats-strip__grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ============================================
@@ -2667,40 +2758,73 @@ ul { list-style: none; }
   padding-right: clamp(20px, 5vw, 80px);
 }
 /* ============================================
-   HOME INTRO SECTION
+   HOME — INTRO SECTION
    ============================================ */
-.home-intro { background: var(--c-dark); border-bottom: 1px solid rgba(255,255,255,0.06); }
+.home-intro {
+  background: var(--c-dark);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
 .home-intro__grid {
   display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  gap: clamp(40px, 8vw, 120px);
-  align-items: start;
+  grid-template-columns: 1fr 1.5fr;
+  gap: clamp(50px, 8vw, 120px);
+  align-items: center;
 }
+.home-intro__left { position: sticky; top: 120px; padding-bottom: 2rem; }
 .home-intro__left .section-title { margin-bottom: 0; }
+.home-intro__divider {
+  width: 36px;
+  height: 1px;
+  background: var(--c-tan);
+  margin: 2rem 0;
+  opacity: 0.6;
+}
 .home-intro__body {
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 1.3vw, 1rem);
   color: var(--c-cream);
-  line-height: 1.85;
-  opacity: 0.75;
-  margin-bottom: 3rem;
+  line-height: 1.9;
+  opacity: 0.72;
+  margin-bottom: 2.5rem;
 }
 .home-intro__stats {
-  display: flex;
-  gap: clamp(2rem, 5vw, 4rem);
-  flex-wrap: wrap;
-  padding-top: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
   border-top: 1px solid rgba(255,255,255,0.07);
+  margin-top: 0.5rem;
+}
+.home-intro__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 1.75rem 0 0;
+  border-right: 1px solid rgba(255,255,255,0.07);
+  padding-right: 1.5rem;
+  margin-right: 1.5rem;
+}
+.home-intro__stat:last-child {
+  border-right: none;
+  padding-right: 0;
+  margin-right: 0;
+}
+.home-intro__cta-row {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
 }
 
 /* ============================================
-   HOME PRODUCTS GRID
+   HOME — PRODUCT HIGHLIGHTS
    ============================================ */
-.home-products { background: var(--c-black); }
+.home-products {
+  background: var(--c-black);
+}
 .home-products__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5px;
-  margin-top: 4rem;
+  margin-top: 3.5rem;
 }
 .home-products__footer {
   margin-top: 2.5rem;
@@ -2709,9 +2833,12 @@ ul { list-style: none; }
 }
 
 /* ============================================
-   HOME GALLERY
+   HOME — GALLERY STRIP
    ============================================ */
-.home-gallery { background: var(--c-dark); padding-bottom: var(--section-pad); }
+.home-gallery {
+  background: var(--c-dark);
+  padding-bottom: var(--section-pad);
+}
 .home-gallery__header {
   display: flex;
   align-items: flex-end;
@@ -2719,11 +2846,12 @@ ul { list-style: none; }
   margin-bottom: 2.5rem;
   flex-wrap: wrap;
   gap: 1.5rem;
+  padding: 0 clamp(20px, 5vw, 80px);
 }
 .home-gallery__header .section-title { margin-bottom: 0; }
 
 /* ============================================
-   PROCESS LINK
+   HOME — PROCESS LINK
    ============================================ */
 .process__link {
   margin-top: 3rem;
@@ -2732,34 +2860,263 @@ ul { list-style: none; }
 }
 
 /* ============================================
-   HERO RIGHT DECO (slat art panel)
+   HERO RIGHT DECO
    ============================================ */
 .hero__right-deco {
   position: absolute;
   right: 0;
   top: 0;
   bottom: 0;
-  width: 32%;
+  width: 30%;
   pointer-events: none;
   z-index: 1;
-  opacity: 0.55;
+  opacity: 0.45;
 }
-.hero__slat-art {
-  width: 100%;
-  height: 100%;
+.hero__slat-art { width: 100%; height: 100%; }
+
+/* ============================================
+   HOME — TESTIMONIAL STRIP
+   ============================================ */
+.home-testimonial {
+  background: var(--c-navy);
+  border-top: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  padding: clamp(60px, 8vw, 100px) 0;
+}
+.home-testimonial__inner {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: clamp(3rem, 6vw, 8rem);
+  align-items: center;
+}
+.home-testimonial__label-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.home-testimonial__stars {
+  color: var(--c-tan);
+  font-size: 0.7rem;
+  letter-spacing: 4px;
+  opacity: 0.8;
+}
+.home-testimonial__quote {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--c-tan);
+  opacity: 0.2;
+  line-height: 1;
+}
+.home-testimonial blockquote {
+  font-family: var(--font-ui);
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--c-cream);
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+.home-testimonial cite {
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-tan);
+  font-style: normal;
 }
 
 /* ============================================
-   RESPONSIVE ADDITIONS
+   RESPONSIVE — HOME SECTIONS
    ============================================ */
+@media (max-width: 1100px) {
+  .home-intro__grid { grid-template-columns: 1fr 1.2fr; }
+  .home-intro__left { position: static; }
+}
 @media (max-width: 1024px) {
-  .home-intro__grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .home-intro__grid { grid-template-columns: 1fr; gap: 3rem; }
+  .home-intro__left { position: static; }
   .home-products__grid { grid-template-columns: repeat(2, 1fr); }
   .hero__right-deco { display: none; }
+  .home-testimonial__inner { grid-template-columns: 1fr; gap: 2rem; }
+  .home-testimonial__label-col { flex-direction: row; align-items: center; }
+}
+@media (max-width: 768px) {
+  .home-products__grid { grid-template-columns: repeat(2, 1fr); }
+  .home-gallery__header { flex-direction: column; align-items: flex-start; padding: 0 clamp(20px, 5vw, 40px); }
+  .home-intro__stats { grid-template-columns: 1fr 1fr 1fr; }
+  .home-intro__stat { padding-right: 1rem; margin-right: 1rem; }
+  .home-intro__cta-row { flex-direction: column; }
+  .home-testimonial__label-col { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 540px) {
+  .home-products__grid { grid-template-columns: 1fr; }
+  .home-intro__stats { grid-template-columns: 1fr; border: none; }
+  .home-intro__stat { border-right: none; padding: 1.25rem 0 0; margin: 0; border-top: 1px solid rgba(255,255,255,0.07); }
 }
 
+/* ============================================
+   UNIVERSAL OVERFLOW & TOUCH SAFETY
+   ============================================ */
+
+/* Prevent any element causing horizontal scroll */
+.container,
+.nav__inner,
+.hero__content,
+.page-hero__content,
+.section,
+.footer__top,
+.marquee {
+  max-width: 100%;
+}
+
+/* Filter bar — better wrapping on mobile */
+@media (max-width: 480px) {
+  .filter-bar { gap: 0.4rem; }
+  .filter-btn {
+    padding: 8px 14px;
+    font-size: 0.68rem;
+  }
+}
+
+/* Ensure process__step doesn't overflow on narrow screens */
+@media (max-width: 400px) {
+  .process__step { padding: 1.5rem 1.25rem; }
+  .hero__title { font-size: clamp(2.5rem, 11vw, 4rem); }
+  .nav__brand { font-size: 0.95rem; }
+  .btn { padding: 12px 22px; font-size: 0.74rem; }
+}
+
+/* Ensure footer nav columns don't overflow */
 @media (max-width: 768px) {
-  .home-products__grid { grid-template-columns: 1fr; }
-  .home-gallery__header { flex-direction: column; align-items: flex-start; }
-  .home-intro__stats { gap: 2rem; }
+  .footer__nav { flex-wrap: wrap; }
+  .footer__brand { max-width: 100%; }
+}
+
+/* Fix contact-page hero on all inner pages — consistent min-height */
+@media (max-width: 768px) {
+  .page-hero__content {
+    padding-top: clamp(60px, 8vw, 100px);
+    padding-bottom: clamp(40px, 6vw, 70px);
+  }
+}
+
+/* ============================================
+   CONTACT PAGE — MOBILE LAYOUT
+   Full single-column stack; form on top, info below
+   ============================================ */
+
+/* --- ≤1024px: collapse the two-column grid --- */
+@media (max-width: 1024px) {
+  /* Remove the angled navy background — it only works with side-by-side layout */
+  .contact-page::before { display: none; }
+
+  .contact__grid--page {
+    grid-template-columns: 1fr;
+    gap: clamp(3rem, 6vw, 5rem);
+  }
+
+  /* Put the form first so the primary CTA is immediately visible */
+  .contact__form  { order: -1; }
+  .contact__info  { order: 1; gap: 2.5rem; }
+}
+
+/* --- ≤768px: tighten spacing and font sizes --- */
+@media (max-width: 768px) {
+  /* Form header */
+  .contact__form .section-title { font-size: clamp(1.8rem, 7vw, 2.6rem); }
+  .contact__form .body-text { font-size: 0.88rem; margin-bottom: 0; }
+  .form-header { margin-bottom: 1.75rem; }
+
+  /* All form-row pairs → single column */
+  .form-row { grid-template-columns: 1fr; gap: 0; }
+
+  /* Give form fields more breathing room on touch screens */
+  .form-group { margin-bottom: 1rem; }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 13px 14px;
+    font-size: 1rem;          /* prevents iOS zoom on focus */
+  }
+  .form-group textarea { min-height: 100px; }
+
+  /* Submit button — already full-width via .btn--full, just ensure it */
+  .btn--full { width: 100%; }
+
+  /* Reach Us — info blocks */
+  .contact__info { gap: 2rem; }
+  .contact-info-block { padding-bottom: 0; }
+
+  /* Contact details list */
+  .contact__detail {
+    padding: 0.9rem 0;
+    font-size: 0.9rem;
+  }
+  .detail-icon {
+    width: 32px; height: 32px;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+  }
+
+  /* Hours table */
+  .hours-row {
+    font-size: 0.85rem;
+    padding: 0.7rem 0;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+  .hours-row span:last-child { font-size: 0.75rem; }
+
+  /* Showroom address */
+  .showroom-address { font-size: 0.88rem; }
+
+  /* Social buttons — stack on very small screens */
+  .contact__socials { gap: 0.5rem; }
+  .contact__socials .btn--sm { flex: 1 1 auto; text-align: center; }
+
+  /* Section label spacing */
+  .contact-info-block .section-label { margin-bottom: 0.75rem; }
+
+  /* Why grid — already 2-col at 768px, keep it */
+  .why__grid { gap: 1.5px; }
+
+  /* Stats strip borders reset for 2-col layout */
+  .stats-strip__item:nth-child(odd)  { border-right: 1px solid rgba(255,255,255,0.06); }
+  .stats-strip__item:nth-child(even) { border-right: none; }
+  .stats-strip__item:nth-child(3),
+  .stats-strip__item:nth-child(4)    { border-bottom: none; }
+}
+
+/* --- ≤540px: single column everything --- */
+@media (max-width: 540px) {
+  /* Why grid → 1 col */
+  .why__grid { grid-template-columns: 1fr; }
+
+  /* Stats strip → 2 col still fine, but squish the padding */
+  .stats-strip__item { padding: 1.5rem 1rem; }
+  .stats-strip__num  { font-size: clamp(2rem, 7vw, 3rem); }
+
+  /* Form: reduce container padding so nothing clips */
+  .contact-page.section { padding-left: 0; padding-right: 0; }
+
+  /* Social buttons full-width */
+  .contact__socials { flex-direction: column; }
+  .contact__socials .btn--sm { width: 100%; justify-content: center; }
+
+  /* Map label padding */
+  .map-placeholder__label { padding: 1.75rem 1.25rem; }
+
+  /* FAQ section label column */
+  .faq__intro .btn { width: 100%; justify-content: center; }
+}
+
+/* --- ≤400px: very narrow phones --- */
+@media (max-width: 400px) {
+  .contact__grid--page { gap: 2.5rem; }
+  .form-group input,
+  .form-group select,
+  .form-group textarea { font-size: 1rem; }
+  .why__card { padding: 2rem 1.5rem; }
+  .contact__detail { gap: 0.75rem; }
 }
