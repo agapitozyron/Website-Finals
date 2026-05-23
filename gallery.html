@@ -1,3 +1,6 @@
+bash
+
+cat > /mnt/user-data/outputs/gallery.html << 'ENDHTML'
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,10 +48,43 @@
     </div>
   </section>
 
-  <!-- GALLERY FILTER -->
+  <!-- MARQUEE — untouched -->
+  <div class="marquee">
+    <div class="marquee__track">
+      <span>LIVING ROOM</span><span class="dot">·</span>
+      <span>BEDROOM</span><span class="dot">·</span>
+      <span>HOME OFFICE</span><span class="dot">·</span>
+      <span>DINING</span><span class="dot">·</span>
+      <span>VENETIAN</span><span class="dot">·</span>
+      <span>ROMAN</span><span class="dot">·</span>
+      <span>ROLLER</span><span class="dot">·</span>
+      <span>MOTORIZED</span><span class="dot">·</span>
+      <span>LIVING ROOM</span><span class="dot">·</span>
+      <span>BEDROOM</span><span class="dot">·</span>
+      <span>HOME OFFICE</span><span class="dot">·</span>
+      <span>DINING</span><span class="dot">·</span>
+      <span>VENETIAN</span><span class="dot">·</span>
+      <span>ROMAN</span><span class="dot">·</span>
+      <span>ROLLER</span><span class="dot">·</span>
+      <span>MOTORIZED</span><span class="dot">·</span>
+    </div>
+  </div>
+
+  <!-- GALLERY FILTER + GRID -->
   <section class="gallery-page section">
     <div class="container">
-      <div class="filter-bar reveal">
+
+      <!-- INTRO HEADER -->
+      <div class="gallery-intro reveal">
+        <div class="gallery-intro__text">
+          <span class="section-label">Our Work</span>
+          <h2 class="section-title">Every Space,<br/>Considered</h2>
+        </div>
+        <p class="gallery-intro__desc">Each installation is a collaboration — shaped around how light moves through a room, what the client needs, and what the space deserves.</p>
+      </div>
+
+      <!-- FILTER BAR -->
+      <div class="filter-bar reveal" data-delay="80">
         <button class="filter-btn active" data-filter="all">All Rooms</button>
         <button class="filter-btn" data-filter="living">Living Room</button>
         <button class="filter-btn" data-filter="bedroom">Bedroom</button>
@@ -60,98 +96,134 @@
       <div class="gallery-grid" id="galleryGrid">
 
         <div class="gallery-grid__item gallery-grid__item--tall reveal" data-delay="0" data-room="living">
-          <div class="gallery-grid__fill gf--1"></div>
+          <div class="gallery-grid__fill gf--1">
+            <div class="gf__slats"></div>
+          </div>
           <div class="gallery-grid__overlay">
-            <span class="gallery-grid__label">Living Room</span>
-            <span class="gallery-grid__product">Venetian Blinds · Wood Slat</span>
+            <span class="gallery-grid__tag">Living Room</span>
+            <span class="gallery-grid__label">Venetian Blinds</span>
+            <span class="gallery-grid__product">Wood Slat · 50mm</span>
           </div>
         </div>
 
         <div class="gallery-grid__item reveal" data-delay="80" data-room="bedroom">
-          <div class="gallery-grid__fill gf--2"></div>
+          <div class="gallery-grid__fill gf--2">
+            <div class="gf__slats"></div>
+          </div>
           <div class="gallery-grid__overlay">
-            <span class="gallery-grid__label">Bedroom</span>
-            <span class="gallery-grid__product">Roller Blinds · Blackout</span>
+            <span class="gallery-grid__tag">Bedroom</span>
+            <span class="gallery-grid__label">Roller Blinds</span>
+            <span class="gallery-grid__product">Blackout · Charcoal</span>
           </div>
         </div>
 
         <div class="gallery-grid__item reveal" data-delay="160" data-room="office">
-          <div class="gallery-grid__fill gf--3"></div>
+          <div class="gallery-grid__fill gf--3">
+            <div class="gf__slats"></div>
+          </div>
           <div class="gallery-grid__overlay">
-            <span class="gallery-grid__label">Home Office</span>
-            <span class="gallery-grid__product">Motorized · Smart Control</span>
+            <span class="gallery-grid__tag">Home Office</span>
+            <span class="gallery-grid__label">Motorized Blinds</span>
+            <span class="gallery-grid__product">Smart Control · App</span>
           </div>
         </div>
 
         <div class="gallery-grid__item gallery-grid__item--wide reveal" data-delay="240" data-room="living">
-          <div class="gallery-grid__fill gf--4"></div>
+          <div class="gallery-grid__fill gf--4">
+            <div class="gf__slats"></div>
+          </div>
           <div class="gallery-grid__overlay">
-            <span class="gallery-grid__label">Living Room</span>
-            <span class="gallery-grid__product">Cellular · Light Filter</span>
+            <span class="gallery-grid__tag">Living Room</span>
+            <span class="gallery-grid__label">Cellular Blinds</span>
+            <span class="gallery-grid__product">Light Filter · Warm</span>
           </div>
         </div>
 
         <div class="gallery-grid__item reveal" data-delay="320" data-room="dining">
-          <div class="gallery-grid__fill gf--5"></div>
+          <div class="gallery-grid__fill gf--5">
+            <div class="gf__slats"></div>
+          </div>
           <div class="gallery-grid__overlay">
-            <span class="gallery-grid__label">Dining Area</span>
-            <span class="gallery-grid__product">Venetian · Aluminium</span>
+            <span class="gallery-grid__tag">Dining Area</span>
+            <span class="gallery-grid__label">Venetian Blinds</span>
+            <span class="gallery-grid__product">Aluminium · White</span>
           </div>
         </div>
 
         <div class="gallery-grid__item gallery-grid__item--tall reveal" data-delay="400" data-room="bedroom">
-          <div class="gallery-grid__fill gf--6"></div>
+          <div class="gallery-grid__fill gf--6">
+            <div class="gf__slats"></div>
+          </div>
           <div class="gallery-grid__overlay">
-            <span class="gallery-grid__label">Master Bedroom</span>
-            <span class="gallery-grid__product">Roman Blinds · Linen Sheer</span>
+            <span class="gallery-grid__tag">Master Bedroom</span>
+            <span class="gallery-grid__label">Roman Blinds</span>
+            <span class="gallery-grid__product">Linen Sheer · Natural</span>
           </div>
         </div>
 
         <div class="gallery-grid__item reveal" data-delay="480" data-room="office">
-          <div class="gallery-grid__fill gf--7"></div>
+          <div class="gallery-grid__fill gf--7">
+            <div class="gf__slats"></div>
+          </div>
           <div class="gallery-grid__overlay">
-            <span class="gallery-grid__label">Office</span>
-            <span class="gallery-grid__product">Vertical Blinds · Fabric</span>
+            <span class="gallery-grid__tag">Office</span>
+            <span class="gallery-grid__label">Vertical Blinds</span>
+            <span class="gallery-grid__product">Fabric · Stone</span>
           </div>
         </div>
 
         <div class="gallery-grid__item reveal" data-delay="560" data-room="living">
-          <div class="gallery-grid__fill gf--8"></div>
+          <div class="gallery-grid__fill gf--8">
+            <div class="gf__slats"></div>
+          </div>
           <div class="gallery-grid__overlay">
-            <span class="gallery-grid__label">Living Room</span>
-            <span class="gallery-grid__product">Roman Blinds · Cotton</span>
+            <span class="gallery-grid__tag">Living Room</span>
+            <span class="gallery-grid__label">Roman Blinds</span>
+            <span class="gallery-grid__product">Cotton · Ecru</span>
           </div>
         </div>
 
         <div class="gallery-grid__item gallery-grid__item--wide reveal" data-delay="640" data-room="dining">
-          <div class="gallery-grid__fill gf--9"></div>
+          <div class="gallery-grid__fill gf--9">
+            <div class="gf__slats"></div>
+          </div>
           <div class="gallery-grid__overlay">
-            <span class="gallery-grid__label">Dining & Kitchen</span>
-            <span class="gallery-grid__product">Roller Blinds · Sheer</span>
+            <span class="gallery-grid__tag">Dining & Kitchen</span>
+            <span class="gallery-grid__label">Roller Blinds</span>
+            <span class="gallery-grid__product">Sheer · Day & Night</span>
           </div>
         </div>
 
         <div class="gallery-grid__item reveal" data-delay="720" data-room="bedroom">
-          <div class="gallery-grid__fill gf--2"></div>
+          <div class="gallery-grid__fill gf--2">
+            <div class="gf__slats"></div>
+          </div>
           <div class="gallery-grid__overlay">
-            <span class="gallery-grid__label">Guest Room</span>
-            <span class="gallery-grid__product">Cellular · Blackout</span>
+            <span class="gallery-grid__tag">Guest Room</span>
+            <span class="gallery-grid__label">Cellular Blinds</span>
+            <span class="gallery-grid__product">Blackout · Dove</span>
           </div>
         </div>
 
         <div class="gallery-grid__item gallery-grid__item--tall reveal" data-delay="800" data-room="office">
-          <div class="gallery-grid__fill gf--3"></div>
+          <div class="gallery-grid__fill gf--3">
+            <div class="gf__slats"></div>
+          </div>
           <div class="gallery-grid__overlay">
-            <span class="gallery-grid__label">Executive Office</span>
-            <span class="gallery-grid__product">Motorized · Roller</span>
+            <span class="gallery-grid__tag">Executive Office</span>
+            <span class="gallery-grid__label">Motorized Roller</span>
+            <span class="gallery-grid__product">Voice & App Control</span>
           </div>
         </div>
 
         <div class="gallery-grid__item reveal" data-delay="880" data-room="living">
-          <div class="gallery-grid__fill gf--5"></div>
+          <div class="gallery-grid__fill gf--5">
+            <div class="gf__slats"></div>
+          </div>
           <div class="gallery-grid__overlay">
-            <span class="gallery-grid__label">Living Room</span>
-            <span class="gallery-grid__product">Venetian · Wood Slat 50mm</span>
+            <span class="gallery-grid__tag">Living Room</span>
+            <span class="gallery-grid__label">Venetian Blinds</span>
+            <span class="gallery-grid__product">Wood Slat · 50mm</span>
           </div>
         </div>
 
@@ -164,25 +236,30 @@
     <div class="container">
       <div class="gallery-stats__grid">
         <div class="gallery-stats__item reveal">
-          <span class="gallery-stats__num">2,000<span style="color:var(--c-tan);font-size:0.55em">+</span></span>
+          <span class="gallery-stats__num">2,000<span class="gallery-stats__sup">+</span></span>
           <span class="gallery-stats__label">Spaces Transformed</span>
         </div>
         <div class="gallery-stats__item reveal" data-delay="100">
-          <span class="gallery-stats__num">50<span style="color:var(--c-tan);font-size:0.55em">+</span></span>
+          <span class="gallery-stats__num">50<span class="gallery-stats__sup">+</span></span>
           <span class="gallery-stats__label">Design Options</span>
         </div>
         <div class="gallery-stats__item reveal" data-delay="200">
-          <span class="gallery-stats__num">98<span style="color:var(--c-tan);font-size:0.55em">%</span></span>
+          <span class="gallery-stats__num">98<span class="gallery-stats__sup">%</span></span>
           <span class="gallery-stats__label">Client Satisfaction</span>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- LIGHTBOX -->
   <div class="lightbox" id="lightbox" aria-hidden="true">
     <div class="lightbox__backdrop" id="lightboxBackdrop"></div>
     <div class="lightbox__content">
       <div class="lightbox__img" id="lightboxImg"></div>
-      <div class="lightbox__info" id="lightboxInfo"></div>
+      <div class="lightbox__meta">
+        <div class="lightbox__info" id="lightboxInfo"></div>
+        <div class="lightbox__counter" id="lightboxCounter"></div>
+      </div>
       <button class="lightbox__close" id="lightboxClose" aria-label="Close">✕</button>
       <button class="lightbox__prev" id="lightboxPrev" aria-label="Previous">←</button>
       <button class="lightbox__next" id="lightboxNext" aria-label="Next">→</button>
@@ -242,3 +319,8 @@
   <script src="javascript/script.js"></script>
 </body>
 </html>
+ENDHTML
+echo "gallery.html written"
+Output
+
+gallery.html written
