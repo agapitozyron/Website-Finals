@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="images/Icon.png" />
   <title>Santi Blinds — Window Coverings Designed for Light</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,9 +16,7 @@
   <header class="nav" id="nav">
     <div class="nav__inner">
       <a href="index.html" class="nav__logo">
-        <span class="nav__logo-mark">
-          <span class="logo-s">S</span><span class="logo-slats"></span>
-        </span>
+        <img src="images/SantiLogoNoBg.png" alt="Santi Blinds logo" class="nav__logo-img" />
         <span class="nav__brand">SANTI <em>BLINDS</em></span>
       </a>
       <nav class="nav__links" id="navLinks">
@@ -99,14 +98,14 @@
 
         <div class="home-intro__right">
           <p class="home-intro__body reveal">At Santi Blinds, we believe window coverings are more than a functional necessity — they are the architects of atmosphere. Every product we craft is a careful study in how light shapes a room, a mood, a life.</p>
-          <p class="home-intro__body reveal" data-delay="60">Founded in Quezon City, we bring precision manufacturing, considered design, and enduring materials to every home and space we touch. What starts with a conversation ends with a space transformed.</p>
+          <p class="home-intro__body reveal" data-delay="60">Founded in Valenzuela City, we bring precision manufacturing, considered design, and enduring materials to every home and space we touch. What starts with a conversation ends with a space transformed.</p>
           <div class="home-intro__stats reveal" data-delay="120">
             <div class="home-intro__stat">
-              <span class="stat__num">15+</span>
+              <span class="stat__num">2+</span>
               <span class="stat__label">Years of Craft</span>
             </div>
             <div class="home-intro__stat">
-              <span class="stat__num">2K+</span>
+              <span class="stat__num">35+</span>
               <span class="stat__label">Spaces Transformed</span>
             </div>
             <div class="home-intro__stat">
@@ -124,6 +123,97 @@
     </div>
   </section>
 
+  <!-- VIDEO SHOWCASE -->
+  <section class="video-showcase">
+    <div class="video-showcase__header container">
+      <span class="section-label reveal">In Motion</span>
+      <h2 class="section-title reveal">Light. Crafted<br/><span class="accent">By Hand.</span></h2>
+    </div>
+    <div class="video-showcase__stage reveal">
+      <div class="video-showcase__frame">
+        <!-- Decorative slat strips flanking the frame -->
+        <div class="video-showcase__slat-left" aria-hidden="true">
+          <div class="vs-slat" style="--vi:0"></div><div class="vs-slat" style="--vi:1"></div>
+          <div class="vs-slat" style="--vi:2"></div><div class="vs-slat" style="--vi:3"></div>
+          <div class="vs-slat" style="--vi:4"></div><div class="vs-slat" style="--vi:5"></div>
+          <div class="vs-slat" style="--vi:6"></div><div class="vs-slat" style="--vi:7"></div>
+        </div>
+
+        <!-- Video Player -->
+        <div class="video-showcase__player" id="vsPlayer">
+          <div class="video-showcase__thumb" id="vsThumb">
+            <!-- Actual video -->
+            <video
+              class="video-showcase__video"
+              id="vsVideo"
+              src="video/Demoreel.mp4"
+              playsinline
+              preload="auto"
+            ></video>
+
+            <!-- Overlay (fades out when playing) -->
+            <div class="video-showcase__overlay" id="vsOverlay">
+              <button class="video-showcase__play" id="vsPlayBtn" aria-label="Play showreel">
+                <div class="video-showcase__play-ring"></div>
+                <svg class="video-showcase__play-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 5.5L19 12L8 18.5V5.5Z" fill="currentColor"/>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Pause button (shown while playing, click anywhere on video) -->
+            <button class="video-showcase__pause" id="vsPauseBtn" aria-label="Pause" style="display:none">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="6" y="5" width="4" height="14" rx="1" fill="currentColor"/>
+                <rect x="14" y="5" width="4" height="14" rx="1" fill="currentColor"/>
+              </svg>
+            </button>
+
+            <!-- Caption bar -->
+            <div class="video-showcase__caption">
+              <span class="video-showcase__caption-label">Showreel 2026</span>
+              <span class="video-showcase__caption-dur" id="vsDur">—</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-showcase__slat-right" aria-hidden="true">
+          <div class="vs-slat" style="--vi:0"></div><div class="vs-slat" style="--vi:1"></div>
+          <div class="vs-slat" style="--vi:2"></div><div class="vs-slat" style="--vi:3"></div>
+          <div class="vs-slat" style="--vi:4"></div><div class="vs-slat" style="--vi:5"></div>
+          <div class="vs-slat" style="--vi:6"></div><div class="vs-slat" style="--vi:7"></div>
+        </div>
+      </div>
+
+      <!-- Metadata row beneath the player -->
+      <div class="video-showcase__meta container">
+        <div class="vs-meta-item reveal" data-delay="0">
+          <span class="vs-meta-item__num">01</span>
+          <div>
+            <h4>Craftsmanship</h4>
+            <p>From raw material to refined finish — see our process in full.</p>
+          </div>
+        </div>
+        <div class="vs-meta-divider"></div>
+        <div class="vs-meta-item reveal" data-delay="100">
+          <span class="vs-meta-item__num">02</span>
+          <div>
+            <h4>Installations</h4>
+            <p>Real homes, real light — our work installed across Metro Manila.</p>
+          </div>
+        </div>
+        <div class="vs-meta-divider"></div>
+        <div class="vs-meta-item reveal" data-delay="200">
+          <span class="vs-meta-item__num">03</span>
+          <div>
+            <h4>The Collection</h4>
+            <p>Every product, in motion — experience light as design.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- PRODUCT HIGHLIGHTS -->
   <section class="section home-products">
     <div class="container">
@@ -134,6 +224,7 @@
       <div class="home-products__grid">
         <article class="product-card reveal" data-delay="0">
           <div class="product-card__img product-card__img--roller">
+            <img src="images/Product_1.png" alt="Roller Blinds fabric swatches" class="product-card__photo" />
             <div class="product-card__slat-deco"></div>
             <span class="product-card__tag">Fabric</span>
           </div>
@@ -145,6 +236,7 @@
         </article>
         <article class="product-card reveal" data-delay="80">
           <div class="product-card__img product-card__img--venetian">
+            <img src="images/Product_2.png" alt="Venetian Blinds close-up slats" class="product-card__photo" />
             <div class="product-card__slat-deco"></div>
             <span class="product-card__tag">Hard Slat</span>
           </div>
@@ -156,6 +248,7 @@
         </article>
         <article class="product-card reveal" data-delay="160">
           <div class="product-card__img product-card__img--roman">
+            <img src="images/Product_3.png" alt="Roman Blinds fabric swatch collection" class="product-card__photo" />
             <div class="product-card__slat-deco"></div>
             <span class="product-card__tag">Fabric</span>
           </div>
@@ -167,6 +260,7 @@
         </article>
         <article class="product-card reveal" data-delay="240">
           <div class="product-card__img product-card__img--motorized">
+            <img src="images/Product_6.png" alt="Motorized Blinds elegance fabric catalogue" class="product-card__photo" />
             <div class="product-card__slat-deco"></div>
             <span class="product-card__tag">Smart</span>
           </div>
@@ -194,24 +288,24 @@
     </div>
     <div class="gallery__strip">
       <div class="gallery__item gallery__item--tall">
-        <div class="gallery__fill gf--1"><div class="gf__slats"></div></div>
-        <div class="gallery__caption"><h4>Venetian Blinds</h4><span>Living Room · Wood Slat 50mm</span></div>
+        <img src="images/1.png" alt="Navy Blue Day & Night Roller Blind" class="gallery__photo" />
+        <div class="gallery__caption"><h4>Roller Blinds</h4><span>Living Room · Day & Night Navy</span></div>
       </div>
       <div class="gallery__item">
-        <div class="gallery__fill gf--2"><div class="gf__slats"></div></div>
-        <div class="gallery__caption"><h4>Roller Blinds</h4><span>Bedroom · Blackout Charcoal</span></div>
+        <img src="images/10.png" alt="Jet Black Blackout Roller Blind" class="gallery__photo" />
+        <div class="gallery__caption"><h4>Roller Blinds</h4><span>Bedroom · Blackout Jet Black</span></div>
       </div>
       <div class="gallery__item gallery__item--wide">
-        <div class="gallery__fill gf--4"><div class="gf__slats"></div></div>
-        <div class="gallery__caption"><h4>Cellular Blinds</h4><span>Living Room · Light Filter Warm</span></div>
+        <img src="images/4.png" alt="Ivory Embossed Roman Blind" class="gallery__photo" />
+        <div class="gallery__caption"><h4>Roman Blinds</h4><span>Living Room · Embossed Ivory</span></div>
       </div>
       <div class="gallery__item">
-        <div class="gallery__fill gf--6"><div class="gf__slats"></div></div>
-        <div class="gallery__caption"><h4>Roman Blinds</h4><span>Master Bedroom · Linen Sheer</span></div>
+        <img src="images/7.png" alt="Soft Lavender Day & Night Roller Blind" class="gallery__photo" />
+        <div class="gallery__caption"><h4>Roller Blinds</h4><span>Master Bedroom · Day & Night Lavender</span></div>
       </div>
       <div class="gallery__item">
-        <div class="gallery__fill gf--3"><div class="gf__slats"></div></div>
-        <div class="gallery__caption"><h4>Motorized</h4><span>Home Office · Smart Control</span></div>
+        <img src="images/9.png" alt="Charcoal Grey Day & Night Roller Blind" class="gallery__photo" />
+        <div class="gallery__caption"><h4>Roller Blinds</h4><span>Home Office · Day & Night Charcoal</span></div>
       </div>
     </div>
   </section>
@@ -328,8 +422,26 @@
     <div class="container">
       <div class="footer__top">
         <div class="footer__brand">
-          <span class="footer__logo">SANTI <em>BLINDS</em></span>
+          <span class="footer__logo">
+            <img src="images/SantiLogoNoBg.png" alt="Santi Blinds logo" class="footer__logo-img" />
+            <span class="footer__logo-text">SANTI <em>BLINDS</em></span>
+          </span>
           <p>Window coverings designed for light, made for life.</p>
+          <a
+            href="https://www.google.com/maps/dir/?api=1&destination=Santi+Cafe+541+Km.16+MacArthur+Highway+Valenzuela+Metro+Manila+1444&travelmode=driving"
+            target="_blank"
+            rel="noopener"
+            class="footer__map-btn"
+            aria-label="Get directions to Santi Blinds showroom"
+          >
+            <svg class="footer__map-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M10 2C7.24 2 5 4.24 5 7c0 4.25 5 11 5 11s5-6.75 5-11c0-2.76-2.24-5-5-5zm0 6.75A1.75 1.75 0 1 1 10 5.25a1.75 1.75 0 0 1 0 3.5z" fill="currentColor"/>
+            </svg>
+            <span>541 Km.16 MacArthur Hwy, Valenzuela</span>
+            <svg class="footer__map-arrow" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
         </div>
         <div class="footer__nav">
           <div>
