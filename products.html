@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="images/Icon.png" />
   <title>Products — Santi Blinds</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,9 +16,7 @@
   <header class="nav scrolled" id="nav">
     <div class="nav__inner">
       <a href="index.html" class="nav__logo">
-        <span class="nav__logo-mark">
-          <span class="logo-s">S</span><span class="logo-slats"></span>
-        </span>
+        <img src="images/SantiLogoNoBg.png" alt="Santi Blinds logo" class="nav__logo-img" />
         <span class="nav__brand">SANTI <em>BLINDS</em></span>
       </a>
       <nav class="nav__links" id="navLinks">
@@ -73,6 +72,7 @@
         <!-- ROLLER -->
         <article class="product-card reveal" data-delay="0" data-category="fabric">
           <div class="product-card__img product-card__img--roller">
+            <img src="images/Product_1.png" alt="Roller Blinds fabric swatches" class="product-card__photo" />
             <div class="product-card__slat-deco"></div>
             <span class="product-card__tag">Fabric</span>
           </div>
@@ -92,6 +92,7 @@
         <!-- VENETIAN -->
         <article class="product-card reveal" data-delay="100" data-category="hard">
           <div class="product-card__img product-card__img--venetian">
+            <img src="images/Product_2.png" alt="Venetian Blinds close-up slats" class="product-card__photo" />
             <div class="product-card__slat-deco"></div>
             <span class="product-card__tag">Hard Slat</span>
           </div>
@@ -111,6 +112,7 @@
         <!-- ROMAN -->
         <article class="product-card reveal" data-delay="200" data-category="fabric">
           <div class="product-card__img product-card__img--roman">
+            <img src="images/Product_3.png" alt="Roman Blinds fabric swatch collection" class="product-card__photo" />
             <div class="product-card__slat-deco"></div>
             <span class="product-card__tag">Fabric</span>
           </div>
@@ -130,6 +132,7 @@
         <!-- VERTICAL -->
         <article class="product-card reveal" data-delay="300" data-category="fabric">
           <div class="product-card__img product-card__img--vertical">
+            <img src="images/Product_4.png" alt="Vertical Blinds roller fabric catalogue" class="product-card__photo" />
             <div class="product-card__slat-deco"></div>
             <span class="product-card__tag">Fabric</span>
           </div>
@@ -149,6 +152,7 @@
         <!-- CELLULAR -->
         <article class="product-card reveal" data-delay="400" data-category="fabric">
           <div class="product-card__img product-card__img--cellular">
+            <img src="images/Product_5.png" alt="Cellular Blinds blackout fabric book" class="product-card__photo" />
             <div class="product-card__slat-deco"></div>
             <span class="product-card__tag">Fabric</span>
           </div>
@@ -168,6 +172,7 @@
         <!-- MOTORIZED -->
         <article class="product-card reveal" data-delay="500" data-category="smart">
           <div class="product-card__img product-card__img--motorized">
+            <img src="images/Product_6.png" alt="Motorized Blinds elegance fabric catalogue" class="product-card__photo" />
             <div class="product-card__slat-deco"></div>
             <span class="product-card__tag">Smart</span>
           </div>
@@ -184,6 +189,47 @@
           </div>
         </article>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- FABRIC SAMPLES SHOWCASE -->
+  <section class="samples-showcase section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Material Library</span>
+        <h2 class="section-title">See It Before You<br/>Decide</h2>
+        <p class="section-desc">Browse our extensive swatch library — over 200 fabrics, textures, and finishes, available to view at our showroom or delivered to your door.</p>
+      </div>
+      <div class="samples-showcase__strip reveal">
+        <div class="samples-showcase__item samples-showcase__item--wide">
+          <img src="images/Product_1.png" alt="Roller blind fabric swatches spread" class="samples-showcase__photo" />
+          <div class="samples-showcase__overlay">
+            <span class="samples-showcase__label">Colour Range</span>
+            <p>30+ fabric tones</p>
+          </div>
+        </div>
+        <div class="samples-showcase__item">
+          <img src="images/Product_3.png" alt="Neutral and grey swatch book" class="samples-showcase__photo" />
+          <div class="samples-showcase__overlay">
+            <span class="samples-showcase__label">Neutral Palette</span>
+            <p>Timeless greys & creams</p>
+          </div>
+        </div>
+        <div class="samples-showcase__item">
+          <img src="images/Product_4.png" alt="Roller blind technical catalogue" class="samples-showcase__photo" />
+          <div class="samples-showcase__overlay">
+            <span class="samples-showcase__label">Technical Spec</span>
+            <p>Full data on every fabric</p>
+          </div>
+        </div>
+        <div class="samples-showcase__item samples-showcase__item--wide">
+          <img src="images/Product_6.png" alt="Elegance fabric catalogue page" class="samples-showcase__photo" />
+          <div class="samples-showcase__overlay">
+            <span class="samples-showcase__label">Elegance Series</span>
+            <p>Premium woven textures</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -238,8 +284,26 @@
     <div class="container">
       <div class="footer__top">
         <div class="footer__brand">
-          <span class="footer__logo">SANTI <em>BLINDS</em></span>
+          <span class="footer__logo">
+            <img src="images/SantiLogoNoBg.png" alt="Santi Blinds logo" class="footer__logo-img" />
+            <span class="footer__logo-text">SANTI <em>BLINDS</em></span>
+          </span>
           <p>Window coverings designed for light, made for life.</p>
+          <a
+            href="https://www.google.com/maps/dir/?api=1&destination=Santi+Cafe+541+Km.16+MacArthur+Highway+Valenzuela+Metro+Manila+1444&travelmode=driving"
+            target="_blank"
+            rel="noopener"
+            class="footer__map-btn"
+            aria-label="Get directions to Santi Blinds showroom"
+          >
+            <svg class="footer__map-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M10 2C7.24 2 5 4.24 5 7c0 4.25 5 11 5 11s5-6.75 5-11c0-2.76-2.24-5-5-5zm0 6.75A1.75 1.75 0 1 1 10 5.25a1.75 1.75 0 0 1 0 3.5z" fill="currentColor"/>
+            </svg>
+            <span>541 Km.16 MacArthur Hwy, Valenzuela</span>
+            <svg class="footer__map-arrow" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
         </div>
         <div class="footer__nav">
           <div>
